@@ -12,10 +12,11 @@ function update_timeline(){
   $(".time_indicator").each(function(){
     $(this).css("left", function(){
       var j = $(this).data('left');
+      var multiplier = 2.5;
       if (j <= 5 ){
-        return "calc(50% - " + ( ( j * 150 ) + time.getMinutes() ) + "px)";
+        return "calc(50% - " + ( ( j * 60 * multiplier ) + ( time.getMinutes() * multiplier) ) + "px)";
       } else {
-        return "calc(50% + " + ( ( (j % 6) * 150 ) - time.getMinutes() ) + "px)";
+        return "calc(50% + " + ( ( (j % 6) * 60 * multiplier ) - ( time.getMinutes() * multiplier) ) + "px)";
       }
     })
 
