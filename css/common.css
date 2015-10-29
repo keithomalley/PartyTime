@@ -1,0 +1,210 @@
+section {
+  width: calc(100% - 70px);
+  position:relative;
+  left:70px;
+}
+
+nav {
+  z-index:99;
+  width:70px;
+  height:100%;
+  background:#4e4e4e;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+nav img {
+  width: calc(100% - 30px ) ;
+  padding:15px;
+  height:auto;
+}
+
+#timeline {
+  min-height:200px;
+  width:calc( 100% - 40px );
+  padding:20px;
+}
+
+.actions {
+  width: calc(100% - 40px);
+  padding:10px 20px;
+  background:#FAFAFA;
+}
+
+#current_time {
+  text-align:center;
+}
+
+#timeline h5 {
+  position:absolute;
+  left:20px;
+  top:20px;
+}
+
+#time_label {
+  position:absolute;
+  width:100%;
+  top:25px;
+  left:0;
+}
+
+.time_indicator {
+  width:1px;
+  display:block;
+  background: #efefef;
+  height:150px;
+  position:absolute;
+  left:50%;
+  top:65px;
+}
+
+
+#current_time_indicator {
+  background: #F76262;
+  left:50%;
+}
+
+
+
+
+/* Headers */
+h1 { font-size: 4.0em; }
+h2 { font-size: 3.4em; }
+h3 { font-size: 2.8em; }
+h4 { font-size: 2.2em; }
+h5 { font-size: 1.6em; }
+h6 { font-size: 1.2em; }
+
+/* General */
+p, span, a, input, textarea, button   { font-size: 1em; }
+.font-small  { font-size: 0.8em; }
+.clear       { clear: both; }
+b            { font-weight:400; }
+i            { font-style: italic; }
+p            { padding: 15px 0; }
+a            { color: #40b0ee; }
+a:hover      { color: #99d4f5; cursor:pointer; }
+a:active     { opacity: 0.3; }
+
+/* Colours */
+.white     { color:#ffffff; }
+.black     { color: #404040; }
+.bg-grey   { background: #ebebeb; }
+.bg-black  { background: #404040; }
+.bg-blue   { background: #40b0ee; }
+
+/* Stylings */
+.rounded   { border-radius: 0.1em; }
+.padded    { padding: 1% 2%; }
+.shadow {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.16);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.16);
+}
+
+/* Figures & Captions */
+figure {
+  width: 80%;
+  margin:3% 10%;
+}
+figure img {
+  max-width:100%;
+  border-radius: 5px 5px 0px 0px;
+}
+figcaption {
+  font-style: italic;
+  text-align:center;
+  padding:10px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+/* Flashes */
+.flash {
+  padding:10px;
+  text-align:center;
+  font-style:italic;
+  border-radius:3px;
+}
+
+/* Yellow */
+.alert {
+  color: #f7aa24;
+  background: #FEEED3;
+}
+
+/* Green */
+.confirmation {
+  color: #4ad527;
+  background: #DBF7D3;
+}
+
+/* Red */
+.warning {
+  color: #ee4040;
+  background: #FCD9DA;
+}
+
+/* Blue */
+.notice {
+  color: #40b0ee;
+  background: #D9EFFC;
+}
+
+
+/* Form Elements */
+form { padding: 5% 0; }
+
+input:focus, textarea:focus {
+  border: 1px solid #40b0ee;
+  outline: none;
+}
+
+input[type="submit"] {
+  width:auto;
+  margin-top:10px;
+}
+
+textarea {
+  width:100%;
+  max-width:100%;
+  min-height:120px;
+}
+
+input, textarea {
+  padding:10px;
+  margin: 5px 0px;
+  width:100%;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 2px;
+}
+
+label {
+  display:block;
+  padding:10px 0px 0px 3px;
+}
+
+input, a, button {
+  transition: all 0.5s;
+}
+
+input[type="submit"], button {
+  cursor:pointer;
+  border: 1px solid  #ededed;
+  background: #ffffff;
+  color: #40b0ee;
+  border-radius: 4px;
+  padding:10px;
+  outline: none;
+}
+
+input[type="submit"]:hover, button:hover {
+  background: #40b0ee;
+  color:#ffffff;
+  border-color: #38a0da;
+}
+
+input[type="submit"]:active, button:active {
+  transition: opacity 0.1s;
+  opacity: 0.3;
+}

@@ -1,0 +1,5 @@
+"activities":[
+  { "id":1, "title":"Activity One", "description":"This is the first activity", "active":true },
+  { "id":2, "title":"Activity Two", "description":"This is the second activity", "active":true },
+  { "id":3, "title":"Activity Three", "description":"This is the third activity", "active":true }
+]
