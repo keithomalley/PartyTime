@@ -13,9 +13,9 @@ function update_timeline(){
     $(this).css("left", function(){
       var j = $(this).data('left');
       if (j <= 5 ){
-        return "calc(50% - " + ( ( j * 150 ) - time.getMinutes() ) + "px)";
+        return "calc(50% - " + ( ( j * 150 ) + time.getMinutes() ) + "px)";
       } else {
-        return "calc(50% + " + ( ( (j % 6) * 150 ) + time.getMinutes() ) + "px)";
+        return "calc(50% + " + ( ( (j % 6) * 150 ) - time.getMinutes() ) + "px)";
       }
     })
 

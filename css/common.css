@@ -34,6 +34,7 @@ nav img {
 
 #current_time {
   text-align:center;
+  overflow: hidden;
 }
 
 #timeline h5 {
