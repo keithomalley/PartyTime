@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
     <script src="js/scripts.js" type="text/javascript"></script>
   </head>
   <body>
@@ -29,17 +30,73 @@
           <span class="time_indicator" data-left="10"></span>
           <span class="time_indicator" data-left="11"></span>
           <span id="current_time_indicator" class="time_indicator"></span>
-
         </div>
       </div>
       <div class="actions shadow">
-        <button class="button-add">Track a new activity</button>
+        <button id="new_activity" class="button-add">Create a new activity</button>
+        <button id="new_timespan" class="button-add">Track an activity</button>
       </div>
     </section>
-    <section class="padded">
+    <section>
       <p class="tags">
-        <a class="tag">All</a>
+        <span>Tags</span>
       </p>
     </section>
+    <section class="activities">
+      <!-- Activities will be inserted here -->
+    </section>
+
+    <section id="new_activity_form">
+      <div id="back"></div>
+      <div class="modal">
+        <input type="text" placeholder="Activity name">
+      </div>
+    </section>
+
+
+
+
+  <!-- Templates -->
+
+    <!-- Activities -->
+    <script id="activity-template" type="text/x-jquery-tmpl">
+
+      <div class="activity ${ getTagsAsClasses(tags) }" data-activity-id="${id}">
+        <h6>${title}</h6>
+        <p>${description}</p>
+        {{if checklist && !$.isEmptyObject(checklist) }}
+          {{tmpl(checklist) "#checklist-template"}}
+        {{/if}}
+        {{tmpl "#checklist-input-template"}}
+      </div>
+    </script>
+
+    <!-- Checklists -->
+    <script id="checklist-template" type="text/x-jquery-tmpl">
+        <p class="checklist_title"><span class="checkbox"></span><span class="checklist_label">${title}</span><span class="checklist_item_count">${$(this).siblings("ul").children(".complete").length} / ${todos.length}</span><span class="show-more-arrow"></span></p>
+        <ul data-checklist-id="${id}">
+          {{each todos}}
+            {{tmpl($value) "#todo-template"}}
+          {{/each}}
+          <input type="text" class="add_todo" name="checklist_title_new_todo" placeholder="Add a new todo">
+        </ul>
+    </script>
+
+    <script id="checklist-input-template" type="text/x-jquery-tmpl">
+      <input type="text" class="add_checklist" name="checklist_title_new_checklist" placeholder="Add a checklist">
+    </script>
+
+    <!-- Todos -->
+    <script id="todo-template" type="text/x-jquery-tmpl">
+      <li class="${active == true ? '' : 'completed'}"><span class="checkbox"></span><span class="todo_label">${title}</span></li>
+    </script>
+
+    <!-- Tags -->
+    <script id="tag-template" type="text/x-jquery-tmpl">
+      <a class="tag" data-tag-id="${id}" data-tag-name="${title.toLowerCase()}">${title}</a>
+    </script>
+
+  <!-- End Templates -->
+
   </body>
 </html>

@@ -13,7 +13,7 @@ nav {
   width:70px;
   height:100%;
   background:#4e4e4e;
-  position:absolute;
+  position:fixed;
   top:0;
   left:0;
 }
@@ -61,7 +61,7 @@ nav img {
 .time_indicator {
   width:1px;
   display:block;
-  background: #efefef;
+  background: #ececec;
   height:150px;
   position:absolute;
   left:50%;
@@ -201,7 +201,7 @@ textarea {
 input, textarea {
   padding:10px;
   margin: 5px 0px;
-  width:100%;
+  width:calc(100% - 20px);
   border: 1px solid rgb(212, 212, 212);
   border-radius: 2px;
 }
@@ -240,15 +240,178 @@ input[type="submit"]:active, button:active {
 /* Tags */
 /*===================================================*/
 
-.tag {
-
-}
-
 .tags {
-  background:
-  padding:10px;
+  width:calc(100% - 40px);
+  padding:20px;
 }
+
+.tags span {
+  padding:6px 10px;
+  margin-bottom:10px;
+  display:inline-block;
+}
+
+.tag {
+  background:#f6f6f6;
+  padding:6px 10px;
+  margin-right:10px;
+  border-radius:3px;
+  color:#adadad;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  position:relative;
+}
+
+.tag:hover {
+  color:#ffffff;
+  background:#d45656;
+}
+
+.tag { transition: all 0.5s; }
 
 .tag-active {
+  color:#ffffff;
+  background:#ec7c7c;
+}
 
+
+/*===================================================*/
+/* Tags */
+/*===================================================*/
+
+.activities {
+  padding: 20px;
+  width: calc(100% - 110px);
+}
+
+.activity {
+  float:left;
+  padding: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width:20%;
+  min-width:200px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+}
+
+.checkbox {
+  width:25px;
+  height:25px;
+  display:inline-block;
+  vertical-align:middle;
+  margin-right:10px;
+  background:url("../img/checkboxes_empty.png");
+  background-size:contain;
+  transition:background 0.5s;
+}
+
+.checkbox:hover {
+  background:url("../img/checkboxes_hover.png");
+  background-size:contain;
+  cursor:pointer;
+}
+
+.checkbox:active {
+  background:url("../img/checkboxes_grey.png");
+  background-size:contain;
+}
+
+.complete .checkbox {
+  background:url("../img/checkboxes_grey.png");
+  background-size:contain;
+}
+
+.complete .checkbox:hover {
+  background:url("../img/checkboxes_delete.png");
+  background-size:contain;
+}
+
+.complete .todo_label {
+  text-decoration: line-through;
+}
+
+.complete .checklist_label {
+  text-decoration: line-through;
+}
+
+.checklist_item_count {
+  font-size:0.7em;
+  background:#fafafa;
+  padding:5px;
+  margin-left:10px;
+}
+
+.show-more-arrow {
+  display:inline-block;
+  float:right;
+  width:25px;
+  height:25px;
+  background-image: url("../img/arrow.png");
+  background-size:contain;
+  cursor:pointer;
+  transition: transform 0.5s;
+}
+
+.show-more-arrow:hover {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.show-more-arrow.down {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.show-more-arrow.down:hover {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.activities ul {
+  background: #fafafa;
+  padding:20px;
+  display:none;
+}
+
+.activities li {
+  margin-bottom:5px;
+}
+
+#new_activity_form {
+  position:absolute;
+  top:0;
+  left:70;
+  display:none;
+}
+
+.modal {
+  position:absolute;
+  left:25%;
+  right:25%;
+  top:100px;
+  min-height: 400px;
+  width:40%;
+  padding:5%;
+  border:1px solid #fafafa;
+  background:#ffffff;
+  border-radius: 5px;
+}
+
+#back {
+  background: rgba(0,0,0,0.5);
+  position:absolute;
+  top:0;
+  left:0;
+  min-width: 1000px;
+  min-height: 1000px;
+  width:100%;
+  height:100%;
 }

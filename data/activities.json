@@ -1,5 +1,36 @@
-"activities":[
-  { "id":1, "title":"Activity One", "description":"This is the first activity", "active":true },
-  { "id":2, "title":"Activity Two", "description":"This is the second activity", "active":true },
-  { "id":3, "title":"Activity Three", "description":"This is the third activity", "active":true }
+[
+  {
+    "id":1,
+    "title":"Final Project",
+    "description":"Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    "active":true,
+    "tags": ["All","Learning","College"],
+    "checklist": {
+      "id": 1,
+      "title": "To-dos",
+      "active":true,
+      "todos": [
+        { "id":1, "title":"Research & Analysis", "active":true },
+        { "id":2, "title":"Outline Design", "active":true },
+        { "id":3, "title":"Prototype", "active":true },
+        { "id":4, "title":"Interim Review", "active":true }
+      ]
+    }
+  },
+  {
+    "id":2,
+    "title":"Playing Guitar",
+    "description":"Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui.",
+    "active":true,
+    "tags": ["All","Learning"],
+    "checklist": {}
+  },
+  {
+    "id":3,
+    "title":"Swimming",
+    "description":"Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor.",
+    "active":true,
+    "tags": ["All","Health"],
+    "checklist": {}
+  }
 ]

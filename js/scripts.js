@@ -18,8 +18,8 @@ $(document).ready(function(){
 
   function setup(){
       if (count_ajax_returned == scripts.length){
-        //setup_timeline();
         update_timeline();
+        populateActivities();
       } else {
         return;
       }
