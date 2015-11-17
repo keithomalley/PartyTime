@@ -13,6 +13,7 @@ function populateActivities(){
     url: "data/activities.json",
     success: function(data){
       $("#activity-template").tmpl(data).appendTo(".activities");
+      updateCompletedCount();
     },
     dataType: "json"
   });
@@ -21,6 +22,7 @@ function populateActivities(){
     url: "data/tags.json",
     success: function(data){
       $("#tag-template").tmpl(data).appendTo(".tags");
+      $("#tag-form-inputs-template").tmpl(data).appendTo("#activity_tags_field");
     },
     dataType: "json"
   });

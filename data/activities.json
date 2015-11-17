@@ -1,36 +1,49 @@
 [
   {
     "id":1,
-    "title":"Final Project",
-    "description":"Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    "title":"College Projects",
+    "description":"All the projects I have to work on currently for college.",
     "active":true,
-    "tags": ["All","Learning","College"],
-    "checklist": {
-      "id": 1,
-      "title": "To-dos",
-      "active":true,
-      "todos": [
-        { "id":1, "title":"Research & Analysis", "active":true },
-        { "id":2, "title":"Outline Design", "active":true },
-        { "id":3, "title":"Prototype", "active":true },
-        { "id":4, "title":"Interim Review", "active":true }
-      ]
-    }
+    "tags": ["Current","Learning","College"],
+    "checklists": [
+      {
+        "id": 1,
+        "title": "Final Project",
+        "active":true,
+        "todos": [
+          { "id":1, "title":"Research & Analysis", "active":true },
+          { "id":2, "title":"Outline Design", "active":true },
+          { "id":3, "title":"Prototype", "active":true },
+          { "id":4, "title":"Interim Review", "active":true }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Javascript CA1",
+        "active":true,
+        "todos": [
+          { "id":5, "title":"Complete report", "active":true },
+          { "id":6, "title":"Comment Code", "active":true },
+          { "id":7, "title":"Design", "active":false },
+          { "id":8, "title":"Final Code", "active":false }
+        ]
+      }
+    ]
   },
   {
     "id":2,
     "title":"Playing Guitar",
     "description":"Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui.",
     "active":true,
-    "tags": ["All","Learning"],
-    "checklist": {}
+    "tags": ["Current","Learning"],
+    "checklists": []
   },
   {
     "id":3,
     "title":"Swimming",
     "description":"Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor.",
     "active":true,
-    "tags": ["All","Health"],
-    "checklist": {}
+    "tags": ["Current","Health"],
+    "checklists": []
   }
 ]

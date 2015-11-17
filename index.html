@@ -49,7 +49,10 @@
     <section id="new_activity_form">
       <div id="back"></div>
       <div class="modal">
-        <input type="text" placeholder="Activity name">
+        <input id="activity_title_field" type="text" placeholder="Activity name" class="required">
+        <textarea id="activity_description_field" class="required" placeholder="Description"></textarea>
+        <p id="activity_tags_field"></p>
+        <input type="submit" id="submit_new_activity">
       </div>
     </section>
 
@@ -64,16 +67,17 @@
       <div class="activity ${ getTagsAsClasses(tags) }" data-activity-id="${id}">
         <h6>${title}</h6>
         <p>${description}</p>
-        {{if checklist && !$.isEmptyObject(checklist) }}
-          {{tmpl(checklist) "#checklist-template"}}
-        {{/if}}
+        {{each checklists}}
+          {{tmpl($value) "#checklist-template"}}
+        {{/each}}
         {{tmpl "#checklist-input-template"}}
+        <p class="activity-tags">Tagged: {{each tags}} <a class="tag-small">${$value}</a>{{/each}}</p>
       </div>
     </script>
 
     <!-- Checklists -->
     <script id="checklist-template" type="text/x-jquery-tmpl">
-        <p class="checklist_title"><span class="checkbox"></span><span class="checklist_label">${title}</span><span class="checklist_item_count">${$(this).siblings("ul").children(".complete").length} / ${todos.length}</span><span class="show-more-arrow"></span></p>
+        <p class="checklist_title"><span class="checkbox"></span><span class="checklist_label">${title}</span><span class="checklist_item_count">0 / ${todos.length}</span><span class="show-more-arrow"></span></p>
         <ul data-checklist-id="${id}">
           {{each todos}}
             {{tmpl($value) "#todo-template"}}
@@ -88,12 +92,16 @@
 
     <!-- Todos -->
     <script id="todo-template" type="text/x-jquery-tmpl">
-      <li class="${active == true ? '' : 'completed'}"><span class="checkbox"></span><span class="todo_label">${title}</span></li>
+      <li class="${active ? '' : 'complete'}"><span class="checkbox"></span><span class="todo_label">${title}</span></li>
     </script>
 
     <!-- Tags -->
     <script id="tag-template" type="text/x-jquery-tmpl">
-      <a class="tag" data-tag-id="${id}" data-tag-name="${title.toLowerCase()}">${title}</a>
+      <a class="tag tag-filter" data-tag-id="${id}" data-tag-name="${title.toLowerCase()}">${title}</a>
+    </script>
+
+    <script id="tag-form-inputs-template" type="text/x-jquery-tmpl">
+      <a class="tag tag-form" data-tag-id="${id}" data-tag-name="${title.toLowerCase()}">${title}</a>
     </script>
 
   <!-- End Templates -->

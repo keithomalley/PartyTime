@@ -5,6 +5,9 @@ $(document).ready(function(){
   // Load each JS file from the js folder
   //====================================================================================
 
+  // prevent caching of files if data changes
+  $.ajaxSetup({ cache: false });
+
   // An array of all the javascript files in the js folder
   var scripts = ["common", "events", "filters", "modals", "templates", "validations"];
   var count_ajax_returned = 0;

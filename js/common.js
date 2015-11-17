@@ -52,7 +52,8 @@ function update_timeline(){
 
 // Get the text of the string element to get rid of any html elements from it
 function sanitize(str){
-  return $(str).text() || str;
+  str = "<p>" + str + "</p>";
+  return $(str).html() || $(str).text() || str;
 }
 
 function getTagsAsClasses(tags){

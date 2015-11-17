@@ -3,7 +3,7 @@ console.log("filters.js loaded");
 var tags = [];
 
 // Event listener to allow filtering by tags, by managing the tags array with any tags that have been clicked
-$(".tags").on("click", ".tag", function(){
+$(".tags").on("click", ".tag-filter", function(){
   // toggle the active class of a tag
   $(this).toggleClass("tag-active");
 
