@@ -1,9 +1,11 @@
 console.log("filters.js loaded");
 
+// array for tracking which tags are selected
 var tags = [];
 
 // Event listener to allow filtering by tags, by managing the tags array with any tags that have been clicked
 $(".tags").on("click", ".tag-filter", function(){
+
   // toggle the active class of a tag
   $(this).toggleClass("tag-active");
 
@@ -26,19 +28,23 @@ $(".tags").on("click", ".tag-filter", function(){
 });
 
 // Function to handle displaying the activities
-function updateActivities(tags){
+function updateActivities(selected_tags){
+  // the time to delay in milliseconds on fadein/fadeout
   var delay_time = 150;
+  // the current clicked tag
   var tag_class;
   $(".activity").delay(delay_time).fadeOut(delay_time).delay(delay_time);
   // Only show activities with the tags that are selected
-  if(tags.length > 0){
+  if(selected_tags.length > 0){
     tag_class = "";
-    for( i=0 ; i < tags.length ; i++ ){
-      tag_class += "." + tags[i];
+    // concatenate all the tag names into a ","-separated string
+    for( i=0 ; i < selected_tags.length ; i++ ){
+      tag_class += "." + selected_tags[i];
       if(i != (tags.length - 1)){
         tag_class += ", ";
       }
     }
+    // fade in all the activities with any tags
     $(tag_class).fadeIn(delay_time);
   } else {
     // If there are no tags selected just show everything
