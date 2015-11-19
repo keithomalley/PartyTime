@@ -36,15 +36,22 @@ function update_timeline(){
 
   // update the position of each of the time_indicators to be relative to the current_time_indicator
   $(".time_indicator").each(function(){
+    var j;
     $(this).css("left", function(){
-      var j = $(this).data('left');
+      j = $(this).data('left');
       var multiplier = 2.5;
       if (j <= 5 ){
         return "calc(50% - " + ( ( j * 60 * multiplier ) + ( time.getMinutes() * multiplier) ) + "px)";
       } else {
         return "calc(50% + " + ( ( (j % 6) * 60 * multiplier ) - ( time.getMinutes() * multiplier) ) + "px)";
       }
-    })
+    }).find(".timelabel").text(function(){
+      if (j <= 5 ){
+        return ( time.getHours() - j + ":00" ) ;
+      } else {
+        return ( time.getHours() + (j % 6) + ":00" ) ;
+      }
+    });
   });
 
   setTimeout(update_timeline, 500);
@@ -62,4 +69,11 @@ function getTagsAsClasses(tags){
     classlist += " " + tags[i].toLowerCase();
   }
   return classlist;
+}
+
+
+function updateCompletedCount(){
+  $(".activities ul").each(function(){
+    $(this).prev().find(".checklist_item_count").text( $(this).children(".complete").length + " / " + $(this).children("li").length );
+  });
 }

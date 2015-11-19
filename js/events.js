@@ -39,9 +39,3 @@ $(".activities").on("change", ".add_checklist", function(){
 $(".activities").on("click change", "li, input", function(){
   updateCompletedCount();
 });
-
-function updateCompletedCount(){
-  $(".activities ul").each(function(){
-    $(this).prev().find(".checklist_item_count").text( $(this).children(".complete").length + " / " + $(this).children("li").length );
-  });
-}

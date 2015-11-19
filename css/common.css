@@ -73,6 +73,14 @@ nav img {
   left:50%;
 }
 
+.timelabel {
+  position:relative;
+  top:42%;
+  color:#efefef;
+  background: #ffffff;
+  padding:2px 10px;
+  border:1px solid #efefef;
+}
 
 /*===================================================*/
 /* Headers */
